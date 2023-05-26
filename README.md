@@ -66,6 +66,10 @@ POST http://localhost:8080/api/top
 
 ## Development server
 
+### Requirements:
+
+Install the workspace dependencies by running `npm install
+
 ### Front
 Run `start:front` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
