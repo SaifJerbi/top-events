@@ -1,0 +1,42 @@
+button {
+    font-family: "montserrat";
+    height: auto;
+    min-height: 36px;
+    background-color: #fff;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #00265a;
+    border: solid 2px var(--border-color);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWP4////fwAJ+wP9CNHoHgAAAABJRU5ErkJggg==);
+    background-size: 0% 100%;
+    background-repeat: repeat-y;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 9px;
+    transition: color .25s ease-out, border-color .25s ease-out, background-image .25s ease-out, background-size .1s ease-out;
+
+    .type {
+        background-image: url('/assets/outcome-background.svg');
+        background-position: right top;
+        height: 100%;
+        min-height: 28px;
+        color: #00265a;
+        display: flex;
+        align-items: center;
+        padding: 4px 16px 4px 8px;
+        position: relative;
+        text-align: left;
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+        transition: color .25s ease-out, border-color .25s ease-out, background-color .15s ease-out;
+    }
+
+    .value {
+        font-family: "ferveur-cotes";
+        font-weight: 800;
+        padding: 0;
+        margin: 0 auto;
+    }
+}

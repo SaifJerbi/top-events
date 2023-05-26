@@ -1,0 +1,19 @@
+version: '3'
+services:
+  data-collector:
+    build: 
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      - NODE_ENV=production
+  mongo:
+   image: mongo:latest
+   container_name: mongo
+   ports:
+    - "27017:27017"
+  top-paris:
+    build: 
+      context: .
+      dockerfile: apps/top-paris/Dockerfile
+    ports:
+      - '8080:80'

@@ -1,0 +1,24 @@
+<div class="container event border-bottom">
+    <div class="d-flex flex-row p-3 pt-0">
+        <div class="sport-icon pt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 504" xml:space="preserve">
+                <path [attr.d]="topEvent.event.competition.sportLabel | sportIcon"></path>
+            </svg>
+        </div>
+        <div class="w-100 p-3">
+            <div class="match-title">
+                {{topEvent.event.description}}
+            </div>
+            <div class="match-ligue">
+                <span class="fi fi-{{topEvent.event.competition.flagLabel | countryFlag}} competition-flag"></span>
+                {{topEvent.event.competition.label}}
+            </div>
+            <div class="match-time">
+                N°{{topEvent.market.index}} {{topEvent.market.label}} Fin de valid. {{topEvent.event.startDate |
+                eventExpire
+                | date:'M/d, HH:mm' }}
+            </div>
+        </div>
+    </div>
+    <fdj-bet [outcomes]="topEvent.market.outcomes"></fdj-bet>
+</div>

@@ -1,0 +1,36 @@
+:host {
+    .event {
+        padding-bottom: 16px;
+        .competition-flag{
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .sport-icon,
+        .sport-icon svg {
+            width: 60px;
+            height: 60px;
+        }
+        .match-title {
+            font-size: .875rem;
+            font-weight: 700;
+            max-width: calc(100% - 80px);
+            margin-bottom: 4px;
+            line-height: 1rem;
+        }
+
+        .match-ligue {
+            font-size: .75rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: .875rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .match-time {
+            color: #576f90;
+            font-size: .6875rem;
+            line-height: .8125rem;
+        }
+    }
+}
