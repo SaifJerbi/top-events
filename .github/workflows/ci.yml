@@ -10,7 +10,10 @@ jobs:
           fetch-depth: 0
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: npm i --force
-      - uses: ./.github/actions/last-successful-build
+      
+      - name: Last successful build
+        uses: ./.github/actions/last-successful-build
+        id: last_successful_commit
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: main
@@ -20,7 +23,7 @@ jobs:
         if: ${{ github.ref != 'refs/heads/main' }}
         run: git branch --track main origin/main
 
-      - run: npx nx affected -t build
+      - run: npx nx affected -t build --base=${{ steps.last_successful_commit.outputs.commit_hash }}
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |

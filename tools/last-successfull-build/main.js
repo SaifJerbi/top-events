@@ -31,9 +31,9 @@ const verifyCommit = async (sha) => {
 async function run() {
   try {
     const inputs = {
-      token: core.getInput('token'),
-      branch: core.getInput('branch'),
-      workflow: core.getInput('workflow'),
+      token: core.getInput('token') || process.env.GITHUB_TOKEN,
+      branch: core.getInput('branch') || "main",
+      workflow: core.getInput('workflow') || process.env.GITHUB_WORKFLOW,
       verify: core.getInput('verify') === 'true' ? true : false,
     };
 
@@ -112,7 +112,7 @@ async function run() {
       sha = triggeringSha;
     }
 
-    core.setOutput('sha', sha);
+    core.setOutput('commit_hash', sha);
   } catch (error) {
     core.setFailed(error?.message);
   }
