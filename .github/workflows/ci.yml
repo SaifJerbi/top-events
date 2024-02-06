@@ -9,11 +9,11 @@ jobs:
         with: 
           fetch-depth: 0
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: npm i --force
-      - uses: "./.github/actions/last-successfull-build.yml"
+      - uses: ./.github/actions/last-successful-build-action
         with:
           token: "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"
           branch: main
+      - run: npm i --force
       - run: git fetch
       - name: check out the main branch
         if: ${{ github.ref != 'refs/heads/main' }}
