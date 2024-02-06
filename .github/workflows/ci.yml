@@ -5,8 +5,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: npm i --force
       - uses: "./.github/actions/last-successfull-build.yml"
