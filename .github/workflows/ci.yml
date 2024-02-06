@@ -14,6 +14,7 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: main
+          workflow: Explore-GitHub-Actions
       - run: git fetch
       - name: check out the main branch
         if: ${{ github.ref != 'refs/heads/main' }}
