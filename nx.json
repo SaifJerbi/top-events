@@ -38,7 +38,7 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/src/test-setup.[jt]s"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/nx.json", "{workspaceRoot}/.github"]
   },
   "generators": {
     "@nx/angular:application": {
