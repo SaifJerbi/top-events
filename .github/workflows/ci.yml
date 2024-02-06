@@ -16,7 +16,7 @@ jobs:
         id: last_successful_commit
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          branch: main
+          branch: ${{ github.ref }}
           workflow: GitHub Actions Demo
       - run: git fetch
       - name: check out the main branch
