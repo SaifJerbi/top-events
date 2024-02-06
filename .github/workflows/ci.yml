@@ -12,7 +12,7 @@ jobs:
       - run: npm i --force
       - uses: ./.github/actions/last-successful-build
         with:
-          token: "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"
+          token: "${{ secrets.GITHUB_TOKEN }}"
           branch: main
       - run: git fetch
       - name: check out the main branch
